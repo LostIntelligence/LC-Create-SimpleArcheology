@@ -25,7 +25,9 @@ public class CreateSimpleArcheologyClient {
     @SubscribeEvent
     static void onClientSetup(FMLClientSetupEvent event) {
         // Some client setup code
+          if (Config.LOG_ALL.getAsBoolean()) {
+        
         CreateSimpleArcheology.LOGGER.info("HELLO FROM CLIENT SETUP");
         CreateSimpleArcheology.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
-    }
+    }}
 }
