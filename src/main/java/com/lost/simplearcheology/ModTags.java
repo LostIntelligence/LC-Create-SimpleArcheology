@@ -7,15 +7,12 @@ import net.minecraft.world.level.block.Block;
 
 public class ModTags {
 
-    public static class Blocks {
+        public static class Blocks {
 
-        public static final TagKey<Block> FAN_PROCESSING_CATALYSTS_AGEING =
-                TagKey.create(
-                        Registries.BLOCK,
-                        ResourceLocation.fromNamespaceAndPath(
-                                CreateSimpleArcheology.MODID,
-                                "fan_processing_catalysts/ageing"
-                        )
-                );
-    }
+                public static final TagKey<Block> FAN_PROCESSING_CATALYSTS_AGEING = TagKey.create(
+                                Registries.BLOCK,
+                                ResourceLocation.fromNamespaceAndPath(
+                                                CreateSimpleArcheology.MODID,
+                                                "fan_processing_catalysts/ageing"));
+        }
 }

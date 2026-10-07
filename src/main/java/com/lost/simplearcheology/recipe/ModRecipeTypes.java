@@ -33,18 +33,15 @@ public enum ModRecipeTypes implements IRecipeTypeInfo {
 
         id = ResourceLocation.fromNamespaceAndPath(
                 CreateSimpleArcheology.MODID,
-                name
-        );
+                name);
 
         serializer = Registers.SERIALIZERS.register(
                 name,
-                () -> new StandardProcessingRecipe.Serializer<>(factory)
-        );
+                () -> new StandardProcessingRecipe.Serializer<>(factory));
 
         type = Registers.TYPES.register(
                 name,
-                () -> RecipeType.simple(id)
-        );
+                () -> RecipeType.simple(id));
     }
 
     public static void register(IEventBus eventBus) {
@@ -65,32 +62,25 @@ public enum ModRecipeTypes implements IRecipeTypeInfo {
 
     @Override
     @SuppressWarnings("unchecked")
-    public <I extends RecipeInput, R extends Recipe<I>>
-    RecipeType<R> getType() {
+    public <I extends RecipeInput, R extends Recipe<I>> RecipeType<R> getType() {
         return (RecipeType<R>) type.get();
     }
 
-    public <I extends RecipeInput, R extends Recipe<I>>
-    Optional<RecipeHolder<R>> find(I input, Level level) {
+    public <I extends RecipeInput, R extends Recipe<I>> Optional<RecipeHolder<R>> find(I input, Level level) {
         return level.getRecipeManager().getRecipeFor(
                 getType(),
                 input,
-                level
-        );
+                level);
     }
 
     private static class Registers {
 
-        private static final DeferredRegister<RecipeSerializer<?>> SERIALIZERS =
-                DeferredRegister.create(
-                        BuiltInRegistries.RECIPE_SERIALIZER,
-                        CreateSimpleArcheology.MODID
-                );
+        private static final DeferredRegister<RecipeSerializer<?>> SERIALIZERS = DeferredRegister.create(
+                BuiltInRegistries.RECIPE_SERIALIZER,
+                CreateSimpleArcheology.MODID);
 
-        private static final DeferredRegister<RecipeType<?>> TYPES =
-                DeferredRegister.create(
-                        net.minecraft.core.registries.Registries.RECIPE_TYPE,
-                        CreateSimpleArcheology.MODID
-                );
+        private static final DeferredRegister<RecipeType<?>> TYPES = DeferredRegister.create(
+                net.minecraft.core.registries.Registries.RECIPE_TYPE,
+                CreateSimpleArcheology.MODID);
     }
 }

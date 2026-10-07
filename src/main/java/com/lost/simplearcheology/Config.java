@@ -27,7 +27,8 @@ public class Config {
                         .define("logAll", false);
 
         private static final Map<String, ModConfigSpec.BooleanValue> RECIPE_TOGGLES = Map.of(
-                        "allowAgeingMeat", ALLOW_AGEING_MEAT, "allowAgeingSand", ALLOW_AGEING_SAND,"allowAgeingGravel",ALLOW_AGEING_GRAVEL);
+                        "allowAgeingMeat", ALLOW_AGEING_MEAT, "allowAgeingSand", ALLOW_AGEING_SAND, "allowAgeingGravel",
+                        ALLOW_AGEING_GRAVEL);
         static final ModConfigSpec SPEC = BUILDER.build();
 
         public static boolean isRecipeEnabled(String configKey) {

@@ -19,11 +19,10 @@ import net.minecraft.world.phys.Vec3;
 
 public class BrushingFanType implements FanProcessingType {
     @Override
-public boolean isValidAt(Level level, BlockPos pos) {
-    return level.getBlockState(pos)
-            .is(CreateSimpleArcheology.FAN_PROCESSING_CATALYSTS_BRUSHING);
-}
-
+    public boolean isValidAt(Level level, BlockPos pos) {
+        return level.getBlockState(pos)
+                .is(CreateSimpleArcheology.FAN_PROCESSING_CATALYSTS_BRUSHING);
+    }
 
     @Override
     public int getPriority() {
@@ -50,8 +49,7 @@ public boolean isValidAt(Level level, BlockPos pos) {
                         level,
                         stack,
                         recipe,
-                        true
-                ))
+                        true))
                 .orElse(null);
     }
 

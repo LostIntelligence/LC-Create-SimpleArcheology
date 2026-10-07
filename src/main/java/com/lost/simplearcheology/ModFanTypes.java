@@ -10,32 +10,25 @@ import net.neoforged.neoforge.registries.RegisterEvent;
 
 public class ModFanTypes {
 
-    public static final FanProcessingType BRUSHING =
-            new BrushingFanType();
+        public static final FanProcessingType BRUSHING = new BrushingFanType();
 
-    public static final FanProcessingType AGEING =
-            new AgeingFanType();
+        public static final FanProcessingType AGEING = new AgeingFanType();
 
-    public static void register(RegisterEvent event) {
-        event.register(
-                CreateBuiltInRegistries.FAN_PROCESSING_TYPE.key(),
-                helper -> {
-                    helper.register(
-                            ResourceLocation.fromNamespaceAndPath(
-                                    CreateSimpleArcheology.MODID,
-                                    "brushing"
-                            ),
-                            BRUSHING
-                    );
+        public static void register(RegisterEvent event) {
+                event.register(
+                                CreateBuiltInRegistries.FAN_PROCESSING_TYPE.key(),
+                                helper -> {
+                                        helper.register(
+                                                        ResourceLocation.fromNamespaceAndPath(
+                                                                        CreateSimpleArcheology.MODID,
+                                                                        "brushing"),
+                                                        BRUSHING);
 
-                    helper.register(
-                            ResourceLocation.fromNamespaceAndPath(
-                                    CreateSimpleArcheology.MODID,
-                                    "ageing"
-                            ),
-                            AGEING
-                    );
-                }
-        );
-    }
+                                        helper.register(
+                                                        ResourceLocation.fromNamespaceAndPath(
+                                                                        CreateSimpleArcheology.MODID,
+                                                                        "ageing"),
+                                                        AGEING);
+                                });
+        }
 }
