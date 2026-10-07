@@ -19,10 +19,11 @@ import net.minecraft.world.phys.Vec3;
 public class AgeingFanType implements FanProcessingType {
 
     @Override
-    public boolean isValidAt(Level level, BlockPos pos) {
-        return level.getBlockState(pos)
-                .is(CreateSimpleArcheology.BULK_AGEING_CATALYST.get());
-    }
+public boolean isValidAt(Level level, BlockPos pos) {
+    return level.getBlockState(pos)
+            .is(CreateSimpleArcheology.FAN_PROCESSING_CATALYSTS_AGEING);
+}
+
 
     @Override
     public int getPriority() {
