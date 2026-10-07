@@ -1,13 +1,10 @@
 package com.lost.simplearcheology;
 
-import java.util.function.Supplier;
-
 import org.slf4j.Logger;
 
 import com.lost.simplearcheology.condition.ConfigValueCondition;
 import com.lost.simplearcheology.recipe.ModRecipeTypes;
 import com.mojang.logging.LogUtils;
-import com.simibubi.create.api.registry.CreateBuiltInRegistries;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 
 import net.minecraft.core.registries.Registries;
@@ -17,8 +14,6 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.crafting.RecipeManager;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
