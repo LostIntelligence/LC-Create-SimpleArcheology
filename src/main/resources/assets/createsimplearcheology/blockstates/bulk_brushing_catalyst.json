@@ -1,7 +1,19 @@
 {
   "variants": {
-    "": {
+    "facing=north": {
       "model": "createsimplearcheology:block/bulk_brushing_catalyst"
+    },
+    "facing=east": {
+      "model": "createsimplearcheology:block/bulk_brushing_catalyst",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "createsimplearcheology:block/bulk_brushing_catalyst",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "createsimplearcheology:block/bulk_brushing_catalyst",
+      "y": 270
     }
   }
 }

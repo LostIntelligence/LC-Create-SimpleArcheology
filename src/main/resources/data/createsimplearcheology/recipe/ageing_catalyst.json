@@ -2,17 +2,23 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "C": {
-      "item": "minecraft:coal_block"
+    "N": {
+      "item": "minecraft:netherite_ingot"
     },
-    "F": {
-      "item": "minecraft:flint"
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "H": {
+      "item": "minecraft:dragon_head"
+    },
+    "W":{
+      "item": "minecraft:wither_skeleton_skull"
     }
   },
   "pattern": [
-    "FFF",
-    "FCF",
-    "FFF"
+    "HDH",
+    "WNW",
+    "HDH"
   ],
   "result": {
     "count": 1,

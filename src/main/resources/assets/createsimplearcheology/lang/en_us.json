@@ -6,5 +6,7 @@
   "createsimplearcheology.configuration.allowGravelToDiamond":"",
   "createsimplearcheology.configuration.logAll":"Activate verbose Logging",
   "createsimplearcheology.recipe.ageing":"Bulk Ageing",
-  "createsimplearcheology.recipe.brushing":"Bulk Brushing"
+  "createsimplearcheology.recipe.brushing":"Bulk Brushing",
+  "block.createsimplearcheology.bulk_ageing_catalyst":"Bulk Ageing Catalyst",
+  "block.createsimplearcheology.bulk_brushing_catalyst":"Bulk Brushing Catalyst"
 }

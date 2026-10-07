@@ -2,10 +2,10 @@
   "neoforge:conditions": [
     {
       "type": "createsimplearcheology:config_value",
-      "value": "allowGravelToDiamond"
+      "value": "allowAgeingGravel"
     }
   ],
-  "type": "createsimplearcheology:brushing",
+  "type": "createsimplearcheology:ageing",
   "ingredients": [
     {
       "item": "minecraft:gravel"
@@ -13,7 +13,7 @@
   ],
   "results": [
     {
-      "id": "minecraft:diamond",
+      "id": "minecraft:suspicious_gravel",
       "amount": 1
     }
   ]

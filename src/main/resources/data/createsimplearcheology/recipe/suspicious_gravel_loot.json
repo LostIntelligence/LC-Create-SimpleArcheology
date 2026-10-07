@@ -1,0 +1,250 @@
+{
+  "type": "createsimplearcheology:brushing",
+  "ingredients": [
+    {
+      "item": "minecraft:suspicious_gravel"
+    }
+  ],
+  "results": [
+    {
+      "id": "minecraft:burn_pottery_sherd",
+      "amount": 1,
+      "chance": 0.0277777778
+    },
+    {
+      "id": "minecraft:danger_pottery_sherd",
+      "amount": 1,
+      "chance": 0.0277777778
+    },
+    {
+      "id": "minecraft:music_disc_relic",
+      "amount": 1,
+      "chance": 0.0277777778
+    },
+    {
+      "id": "minecraft:friend_pottery_sherd",
+      "amount": 1,
+      "chance": 0.0277777778
+    },
+    {
+      "id": "minecraft:heart_pottery_sherd",
+      "amount": 1,
+      "chance": 0.0277777778
+    },
+    {
+      "id": "minecraft:heartbreak_pottery_sherd",
+      "amount": 1,
+      "chance": 0.0277777778
+    },
+    {
+      "id": "minecraft:host_armor_trim_smithing_template",
+      "amount": 1,
+      "chance": 0.0277777778
+    },
+    {
+      "id": "minecraft:howl_pottery_sherd",
+      "amount": 1,
+      "chance": 0.0277777778
+    },
+    {
+      "id": "minecraft:raiser_armor_trim_smithing_template",
+      "amount": 1,
+      "chance": 0.0277777778
+    },
+    {
+      "id": "minecraft:shaper_armor_trim_smithing_template",
+      "amount": 1,
+      "chance": 0.0277777778
+    },
+    {
+      "id": "minecraft:sheaf_pottery_sherd",
+      "amount": 1,
+      "chance": 0.0277777778
+    },
+    {
+      "id": "minecraft:wayfinder_armor_trim_smithing_template",
+      "amount": 1,
+      "chance": 0.0277777778
+    },
+    {
+      "id": "minecraft:blade_pottery_sherd",
+      "amount": 1,
+      "chance": 0.0222222222
+    },
+    {
+      "id": "minecraft:explorer_pottery_sherd",
+      "amount": 1,
+      "chance": 0.0222222222
+    },
+    {
+      "id": "minecraft:mourner_pottery_sherd",
+      "amount": 1,
+      "chance": 0.0222222222
+    },
+    {
+      "id": "minecraft:plenty_pottery_sherd",
+      "amount": 1,
+      "chance": 0.0222222222
+    },
+    {
+      "id": "minecraft:iron_axe",
+      "amount": 1,
+      "chance": 0.0222222222
+    },
+    {
+      "id": "minecraft:coal",
+      "amount": 1,
+      "chance": 0.0518518519
+    },
+    {
+      "id": "minecraft:emerald",
+      "amount": 1,
+      "chance": 0.0592592593
+    },
+    {
+      "id": "minecraft:wheat",
+      "amount": 1,
+      "chance": 0.0592592593
+    },
+    {
+      "id": "minecraft:wooden_hoe",
+      "amount": 1,
+      "chance": 0.0592592593
+    },
+    {
+      "id": "minecraft:gold_nugget",
+      "amount": 1,
+      "chance": 0.0518518519
+    },
+    {
+      "id": "minecraft:blue_dye",
+      "amount": 1,
+      "chance": 0.0148148148
+    },
+    {
+      "id": "minecraft:brick",
+      "amount": 1,
+      "chance": 0.0148148148
+    },
+    {
+      "id": "minecraft:brown_candle",
+      "amount": 1,
+      "chance": 0.0148148148
+    },
+    {
+      "id": "minecraft:clay",
+      "amount": 1,
+      "chance": 0.0148148148
+    },
+    {
+      "id": "minecraft:green_candle",
+      "amount": 1,
+      "chance": 0.0148148148
+    },
+    {
+      "id": "minecraft:light_blue_dye",
+      "amount": 1,
+      "chance": 0.0148148148
+    },
+    {
+      "id": "minecraft:orange_dye",
+      "amount": 1,
+      "chance": 0.0148148148
+    },
+    {
+      "id": "minecraft:purple_candle",
+      "amount": 1,
+      "chance": 0.0148148148
+    },
+    {
+      "id": "minecraft:red_candle",
+      "amount": 1,
+      "chance": 0.0148148148
+    },
+    {
+      "id": "minecraft:white_dye",
+      "amount": 1,
+      "chance": 0.0148148148
+    },
+    {
+      "id": "minecraft:yellow_dye",
+      "amount": 1,
+      "chance": 0.0148148148
+    },
+    {
+      "id": "minecraft:beetroot_seeds",
+      "amount": 1,
+      "chance": 0.0074074074
+    },
+    {
+      "id": "minecraft:blue_stained_glass_pane",
+      "amount": 1,
+      "chance": 0.0074074074
+    },
+    {
+      "id": "minecraft:dead_bush",
+      "amount": 1,
+      "chance": 0.0074074074
+    },
+    {
+      "id": "minecraft:flower_pot",
+      "amount": 1,
+      "chance": 0.0074074074
+    },
+    {
+      "id": "minecraft:lead",
+      "amount": 1,
+      "chance": 0.0074074074
+    },
+    {
+      "id": "minecraft:light_blue_stained_glass_pane",
+      "amount": 1,
+      "chance": 0.0074074074
+    },
+    {
+      "id": "minecraft:magenta_stained_glass_pane",
+      "amount": 1,
+      "chance": 0.0074074074
+    },
+    {
+      "id": "minecraft:oak_hanging_sign",
+      "amount": 1,
+      "chance": 0.0074074074
+    },
+    {
+      "id": "minecraft:pink_stained_glass_pane",
+      "amount": 1,
+      "chance": 0.0074074074
+    },
+    {
+      "id": "minecraft:purple_stained_glass_pane",
+      "amount": 1,
+      "chance": 0.0074074074
+    },
+    {
+      "id": "minecraft:red_stained_glass_pane",
+      "amount": 1,
+      "chance": 0.0074074074
+    },
+    {
+      "id": "minecraft:spruce_hanging_sign",
+      "amount": 1,
+      "chance": 0.0074074074
+    },
+    {
+      "id": "minecraft:string",
+      "amount": 1,
+      "chance": 0.0074074074
+    },
+    {
+      "id": "minecraft:wheat_seeds",
+      "amount": 1,
+      "chance": 0.0074074074
+    },
+    {
+      "id": "minecraft:yellow_stained_glass_pane",
+      "amount": 1,
+      "chance": 0.0074074074
+    }
+  ]
+}

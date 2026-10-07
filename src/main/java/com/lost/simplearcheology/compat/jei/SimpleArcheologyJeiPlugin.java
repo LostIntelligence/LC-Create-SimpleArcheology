@@ -37,7 +37,7 @@ public class SimpleArcheologyJeiPlugin implements IModPlugin {
                 .catalystStack(() -> new ItemStack(createItem("encased_fan")))
                 .catalyst(() -> CreateSimpleArcheology.BULK_AGEING_CATALYST.get())
                 .doubleItemIcon(createItem("propeller"), CreateSimpleArcheology.BULK_AGEING_CATALYST.get())
-                .emptyBackground(178, 72)
+                .emptyBackground(250, 180)
                 .build(categoryId("ageing"), info -> new SimpleArcheologyFanCategory<>(
                         info,
                         CreateSimpleArcheology.BULK_AGEING_CATALYST.get().defaultBlockState()));
@@ -47,7 +47,7 @@ public class SimpleArcheologyJeiPlugin implements IModPlugin {
                 .catalystStack(() -> new ItemStack(createItem("encased_fan")))
                 .catalyst(() -> CreateSimpleArcheology.BULK_BRUSHING_CATALYST.get())
                 .doubleItemIcon(createItem("propeller"), CreateSimpleArcheology.BULK_BRUSHING_CATALYST.get())
-                .emptyBackground(178, 72)
+                .emptyBackground(250, 180)
                 .build(categoryId("brushing"), info -> new SimpleArcheologyFanCategory<>(
                         info,
                         CreateSimpleArcheology.BULK_BRUSHING_CATALYST.get().defaultBlockState()));

@@ -2,6 +2,7 @@ package com.lost.simplearcheology;
 
 import org.slf4j.Logger;
 
+import com.lost.simplearcheology.block.BulkBrushingCatalystBlock;
 import com.lost.simplearcheology.condition.ConfigValueCondition;
 import com.lost.simplearcheology.recipe.ModRecipeTypes;
 import com.mojang.logging.LogUtils;
@@ -47,11 +48,12 @@ public class CreateSimpleArcheology {
                                         .mapColor(MapColor.STONE)
                                         .sound(SoundType.METAL).noOcclusion());
 
-        public static final DeferredBlock<Block> BULK_BRUSHING_CATALYST = BLOCKS.registerSimpleBlock(
+        public static final DeferredBlock<BulkBrushingCatalystBlock> BULK_BRUSHING_CATALYST = BLOCKS.register(
                         "bulk_brushing_catalyst",
-                        BlockBehaviour.Properties.of()
-                                        .mapColor(MapColor.STONE)
-                                        .sound(SoundType.METAL).noOcclusion());
+                        () -> new BulkBrushingCatalystBlock(
+                                        BlockBehaviour.Properties.of()
+                                                        .mapColor(MapColor.STONE)
+                                                        .sound(SoundType.METAL).noOcclusion()));
 
         // Creates a new BlockItem
         public static final DeferredItem<BlockItem> BULK_AGEING_CATALYST_ITEM = ITEMS

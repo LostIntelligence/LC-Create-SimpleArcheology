@@ -1,0 +1,120 @@
+{
+  "type": "createsimplearcheology:brushing",
+  "ingredients": [
+    {
+      "item": "minecraft:suspicious_sand"
+    }
+  ],
+  "results": [
+    {
+      "id": "minecraft:coal",
+      "amount": 1,
+      "chance": 0.0444444444
+    },
+    {
+      "id": "minecraft:emerald",
+      "amount": 1,
+      "chance": 0.1277777778
+    },
+    {
+      "id": "minecraft:wheat",
+      "amount": 1,
+      "chance": 0.0444444444
+    },
+    {
+      "id": "minecraft:wooden_hoe",
+      "amount": 1,
+      "chance": 0.0444444444
+    },
+    {
+      "id": "minecraft:gold_nugget",
+      "amount": 1,
+      "chance": 0.0444444444
+    },
+    {
+      "id": "minecraft:angler_pottery_sherd",
+      "amount": 1,
+      "chance": 0.0222222222
+    },
+    {
+      "id": "minecraft:shelter_pottery_sherd",
+      "amount": 1,
+      "chance": 0.0222222222
+    },
+    {
+      "id": "minecraft:sniffer_egg",
+      "amount": 1,
+      "chance": 0.0222222222
+    },
+    {
+      "id": "minecraft:snort_pottery_sherd",
+      "amount": 1,
+      "chance": 0.0222222222
+    },
+    {
+      "id": "minecraft:iron_axe",
+      "amount": 1,
+      "chance": 0.0222222222
+    },
+    {
+      "id": "minecraft:archer_pottery_sherd",
+      "amount": 1,
+      "chance": 0.0416666667
+    },
+    {
+      "id": "minecraft:gunpowder",
+      "amount": 1,
+      "chance": 0.0416666667
+    },
+    {
+      "id": "minecraft:miner_pottery_sherd",
+      "amount": 1,
+      "chance": 0.0416666667
+    },
+    {
+      "id": "minecraft:prize_pottery_sherd",
+      "amount": 1,
+      "chance": 0.0416666667
+    },
+    {
+      "id": "minecraft:skull_pottery_sherd",
+      "amount": 1,
+      "chance": 0.0416666667
+    },
+    {
+      "id": "minecraft:tnt",
+      "amount": 1,
+      "chance": 0.0416666667
+    },
+    {
+      "id": "minecraft:diamond",
+      "amount": 1,
+      "chance": 0.0416666667
+    },
+    {
+      "id": "minecraft:arms_up_pottery_sherd",
+      "amount": 1,
+      "chance": 0.0833333333
+    },
+    {
+      "id": "minecraft:brewer_pottery_sherd",
+      "amount": 1,
+      "chance": 0.0833333333
+    },
+    {
+      "id": "minecraft:brick",
+      "amount": 1,
+      "chance": 0.0416666667
+    },
+    {
+      "id": "minecraft:stick",
+      "amount": 1,
+      "chance": 0.0416666667
+    },
+    {
+      "id": "minecraft:suspicious_stew",
+      "amount": 1,
+      "chance": 0.0416666667
+    }
+  ]
+}

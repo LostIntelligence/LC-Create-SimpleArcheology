@@ -1,3 +1,4 @@
 {
-  "parent": "createsimplearcheology:block/bulk_ageing_catalyst"
+  "parent": "createsimplearcheology:block/bulk_ageing_catalyst",
+  "render_type": "minecraft:cutout"
 }
