@@ -1,0 +1,14 @@
+{
+  "type": "createsimplearcheology:ageing",
+  "ingredients": [
+    {
+      "item": "minecraft:coal"
+    }
+  ],
+  "results": [
+    {
+      "item": "minecraft:diamond",
+      "count": 1
+    }
+  ]
+}

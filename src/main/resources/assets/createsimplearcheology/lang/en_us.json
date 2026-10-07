@@ -1,13 +1,3 @@
 {
-  "itemGroup.createsimplearcheology": "Example Mod Tab",
-  "block.createsimplearcheology.example_block": "Example Block",
-  "item.createsimplearcheology.example_item": "Example Item",
-
-  "createsimplearcheology.configuration.title": "Create: Simple Archeology Configs",
-  "createsimplearcheology.configuration.section.createsimplearcheology.common.toml": "Create: Simple Archeology Configs",
-  "createsimplearcheology.configuration.section.createsimplearcheology.common.toml.title": "Create: Simple Archeology Configs",
-  "createsimplearcheology.configuration.items": "Item List",
-  "createsimplearcheology.configuration.logDirtBlock": "Log Dirt Block",
-  "createsimplearcheology.configuration.magicNumberIntroduction": "Magic Number Text",
-  "createsimplearcheology.configuration.magicNumber": "Magic Number"
+  "itemGroup.createsimplearcheology": "Create: Simple Archeology"
 }

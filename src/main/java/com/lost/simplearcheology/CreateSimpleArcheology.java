@@ -1,15 +1,24 @@
 package com.lost.simplearcheology;
 
+import java.util.function.Supplier;
+
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
+import com.simibubi.create.api.registry.CreateBuiltInRegistries;
+import com.simibubi.create.foundation.data.CreateRegistrate;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.crafting.RecipeManager;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
@@ -30,60 +39,30 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 public class CreateSimpleArcheology {
     public static final String MODID = "createsimplearcheology";
     public static final Logger LOGGER = LogUtils.getLogger();
+    public static final CreateRegistrate REG = CreateRegistrate.create(MODID);
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MODID);
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MODID);
-    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
-
-
-
-
-
-
-
-
-
-
+    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister
+            .create(Registries.CREATIVE_MODE_TAB, MODID);
 
     // Creates a new Block
-    public static final DeferredBlock<Block> BULK_AGEING_CATALYST = BLOCKS.registerSimpleBlock("bulk_ageing_catalyst", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
-    public static final DeferredBlock<Block> BULK_BRUSHING_CATALYST = BLOCKS.registerSimpleBlock("bulk_brushing_catalyst", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
+    public static final DeferredBlock<Block> BULK_AGEING_CATALYST = BLOCKS.registerSimpleBlock(
+            "bulk_ageing_catalyst",
+            BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.STONE)
+                    .sound(SoundType.METAL).noOcclusion());
 
-
-
-
-
-
-
-
-
-
-
-
+    public static final DeferredBlock<Block> BULK_BRUSHING_CATALYST = BLOCKS.registerSimpleBlock(
+            "bulk_brushing_catalyst",
+            BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.STONE)
+                    .sound(SoundType.METAL).noOcclusion());
 
     // Creates a new BlockItem
-    public static final DeferredItem<BlockItem> BULK_AGEING_CATALYST_ITEM = ITEMS.registerSimpleBlockItem("bulk_ageing_catalyst",   BULK_AGEING_CATALYST);
-    public static final DeferredItem<BlockItem> BULK_BRUSHING_CATALYST_ITEM = ITEMS.registerSimpleBlockItem("bulk_brushing_catalyst",   BULK_BRUSHING_CATALYST);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    public static final DeferredItem<BlockItem> BULK_AGEING_CATALYST_ITEM = ITEMS
+            .registerSimpleBlockItem("bulk_ageing_catalyst", BULK_AGEING_CATALYST);
+    public static final DeferredItem<BlockItem> BULK_BRUSHING_CATALYST_ITEM = ITEMS
+            .registerSimpleBlockItem("bulk_brushing_catalyst", BULK_BRUSHING_CATALYST);
 
     // Creates a creative tab with the id "createsimplearcheology:example_tab" for
     // the example item, that is placed after the combat tab
@@ -95,7 +74,7 @@ public class CreateSimpleArcheology {
                     .displayItems((parameters, output) -> {
                         output.accept(BULK_AGEING_CATALYST_ITEM.get());
                         output.accept(BULK_BRUSHING_CATALYST_ITEM.get());
-                                                       
+
                     }).build());
 
     // The constructor for the mod class is the first code that is run when your mod
@@ -103,38 +82,76 @@ public class CreateSimpleArcheology {
     // FML will recognize some parameter types like IEventBus or ModContainer and
     // pass them in automatically.
     public CreateSimpleArcheology(IEventBus modEventBus, ModContainer modContainer) {
-        // Register the commonSetup method for modloading
+        ModRecipeTypes.register(modEventBus);
+
+        modEventBus.addListener(ModFanTypes::register);
+
         modEventBus.addListener(this::commonSetup);
 
         BLOCKS.register(modEventBus);
         ITEMS.register(modEventBus);
         CREATIVE_MODE_TABS.register(modEventBus);
 
-        // Register ourselves for server and other game events we are interested in.
-        // Note that this is necessary if and only if we want *this* class
-        // (CreateSimpleArcheology) to respond directly to events.
-        // Do not add this line if there are no @SubscribeEvent-annotated functions in
-        // this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
-        // Register our mod's ModConfigSpec so that FML can create and load the config
-        // file for us
-        modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+        modContainer.registerConfig(
+                ModConfig.Type.COMMON,
+                Config.SPEC);
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
         if (Config.LOG_ALL.getAsBoolean()) {
             CreateSimpleArcheology.LOGGER.info("[CreateSimpleArcheology] Common Setup Active");
         }
+
+        var key = CreateBuiltInRegistries.FAN_PROCESSING_TYPE.getKey(ModFanTypes.AGEING);
+
+        LOGGER.info("Ageing Fan Type registered as: {}", key);
+
+        if (key == null) {
+            LOGGER.error("AGEING FAN TYPE WAS NOT REGISTERED!");
+
+        }
+
     }
 
-   
-
     // You can use SubscribeEvent and let the Event Bus discover methods to call
-    @SubscribeEvent
+   
+   /*@SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
         if (Config.LOG_ALL.getAsBoolean()) {
             CreateSimpleArcheology.LOGGER.info("[CreateSimpleArcheology] Server Setup Active");
         }
+    }*/
+@SubscribeEvent
+public void onServerStarting(ServerStartingEvent event) {
+    var recipeManager = event.getServer().getRecipeManager();
+
+    LOGGER.info("========== AGEING DEBUG ==========");
+
+    LOGGER.info("AGEING id: {}", ModRecipeTypes.AGEING.getId().toString());
+
+    var recipes = recipeManager.getAllRecipesFor(
+            ModRecipeTypes.AGEING.getType()
+    );
+
+    LOGGER.info("Loaded ageing recipes: {}", recipes.size());
+
+    for (var recipe : recipes) {
+        LOGGER.info("AGEING RECIPE: {}", recipe.id());
     }
+
+    LOGGER.info("==================================");
+}
+
+
+
+
+
+    public static final TagKey<Block> FAN_PROCESSING_CATALYSTS_AGEING = TagKey.create(
+            Registries.BLOCK,
+            ResourceLocation.fromNamespaceAndPath(
+                    MODID,
+                    "fan_processing_catalysts/ageing"));
+
 }
