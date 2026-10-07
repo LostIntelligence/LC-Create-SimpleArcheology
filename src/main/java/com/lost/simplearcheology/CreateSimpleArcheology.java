@@ -103,50 +103,15 @@ public class CreateSimpleArcheology {
         if (Config.LOG_ALL.getAsBoolean()) {
             CreateSimpleArcheology.LOGGER.info("[CreateSimpleArcheology] Common Setup Active");
         }
-
-        var key = CreateBuiltInRegistries.FAN_PROCESSING_TYPE.getKey(ModFanTypes.AGEING);
-
-        LOGGER.info("Ageing Fan Type registered as: {}", key);
-
-        if (key == null) {
-            LOGGER.error("AGEING FAN TYPE WAS NOT REGISTERED!");
-
-        }
-
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
-   
-   /*@SubscribeEvent
+    @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
         if (Config.LOG_ALL.getAsBoolean()) {
             CreateSimpleArcheology.LOGGER.info("[CreateSimpleArcheology] Server Setup Active");
         }
-    }*/
-@SubscribeEvent
-public void onServerStarting(ServerStartingEvent event) {
-    var recipeManager = event.getServer().getRecipeManager();
-
-    LOGGER.info("========== AGEING DEBUG ==========");
-
-    LOGGER.info("AGEING id: {}", ModRecipeTypes.AGEING.getId().toString());
-
-    var recipes = recipeManager.getAllRecipesFor(
-            ModRecipeTypes.AGEING.getType()
-    );
-
-    LOGGER.info("Loaded ageing recipes: {}", recipes.size());
-
-    for (var recipe : recipes) {
-        LOGGER.info("AGEING RECIPE: {}", recipe.id());
     }
-
-    LOGGER.info("==================================");
-}
-
-
-
-
 
     public static final TagKey<Block> FAN_PROCESSING_CATALYSTS_AGEING = TagKey.create(
             Registries.BLOCK,
