@@ -1,3 +1,10 @@
 {
-  "itemGroup.createsimplearcheology": "Create: Simple Archeology"
+  "itemGroup.createsimplearcheology": "Create: Simple Archeology",
+  "createsimplearcheology.configuration.allowAgeingMeat":"Allow Ageing Meat",
+  "createsimplearcheology.configuration.allowAgeingSand":"Allow Ageing Sand",
+  "createsimplearcheology.configuration.allowAgeingGravel":"Allow Ageing Gravel",
+  "createsimplearcheology.configuration.allowGravelToDiamond":"",
+  "createsimplearcheology.configuration.logAll":"Activate verbose Logging",
+  "createsimplearcheology.recipe.ageing":"Bulk Ageing",
+  "createsimplearcheology.recipe.brushing":"Bulk Brushing"
 }

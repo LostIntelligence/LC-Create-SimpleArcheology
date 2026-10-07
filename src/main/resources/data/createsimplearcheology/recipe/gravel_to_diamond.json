@@ -1,0 +1,20 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createsimplearcheology:config_value",
+      "value": "allowGravelToDiamond"
+    }
+  ],
+  "type": "createsimplearcheology:brushing",
+  "ingredients": [
+    {
+      "item": "minecraft:gravel"
+    }
+  ],
+  "results": [
+    {
+      "id": "minecraft:diamond",
+      "amount": 1
+    }
+  ]
+}

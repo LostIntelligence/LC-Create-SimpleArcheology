@@ -1,7 +1,8 @@
-package com.lost.simplearcheology;
+package com.lost.simplearcheology.recipe;
 
 import java.util.Optional;
 
+import com.lost.simplearcheology.CreateSimpleArcheology;
 import com.simibubi.create.content.processing.recipe.StandardProcessingRecipe;
 import com.simibubi.create.foundation.recipe.IRecipeTypeInfo;
 
@@ -19,7 +20,8 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 public enum ModRecipeTypes implements IRecipeTypeInfo {
 
-    AGEING(AgeingRecipe::new);
+    AGEING(AgeingRecipe::new),
+    BRUSHING(BrushingRecipe::new);
 
     public final ResourceLocation id;
 

@@ -1,9 +1,10 @@
-package com.lost.simplearcheology;
+package com.lost.simplearcheology.recipe;
 
 import java.util.List;
 
 import org.jetbrains.annotations.Nullable;
 
+import com.lost.simplearcheology.CreateSimpleArcheology;
 import com.simibubi.create.content.kinetics.fan.processing.FanProcessingType;
 import com.simibubi.create.foundation.recipe.RecipeApplier;
 
@@ -16,12 +17,11 @@ import net.minecraft.world.item.crafting.SingleRecipeInput;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 
-public class AgeingFanType implements FanProcessingType {
-
+public class BrushingFanType implements FanProcessingType {
     @Override
 public boolean isValidAt(Level level, BlockPos pos) {
     return level.getBlockState(pos)
-            .is(CreateSimpleArcheology.FAN_PROCESSING_CATALYSTS_AGEING);
+            .is(CreateSimpleArcheology.FAN_PROCESSING_CATALYSTS_BRUSHING);
 }
 
 
@@ -32,16 +32,9 @@ public boolean isValidAt(Level level, BlockPos pos) {
 
     @Override
     public boolean canProcess(ItemStack stack, Level level) {
-        boolean canProcess = ModRecipeTypes.AGEING
+        boolean canProcess = ModRecipeTypes.BRUSHING
                 .find(new SingleRecipeInput(stack), level)
                 .isPresent();
-
-        CreateSimpleArcheology.LOGGER.info(
-                "AGEING recipe lookup: item={}, found={}",
-                stack.getItem(),
-                canProcess
-        );
-
         return canProcess;
     }
 
@@ -50,7 +43,7 @@ public boolean isValidAt(Level level, BlockPos pos) {
             ItemStack stack,
             Level level) {
 
-        return ModRecipeTypes.AGEING
+        return ModRecipeTypes.BRUSHING
                 .find(new SingleRecipeInput(stack), level)
                 .map(RecipeHolder::value)
                 .map(recipe -> RecipeApplier.applyRecipeOn(

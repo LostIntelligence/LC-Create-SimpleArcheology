@@ -1,4 +1,4 @@
-package com.lost.simplearcheology;
+package com.lost.simplearcheology.recipe;
 
 import com.simibubi.create.content.processing.recipe.ProcessingRecipeParams;
 import com.simibubi.create.content.processing.recipe.StandardProcessingRecipe;
@@ -6,10 +6,10 @@ import com.simibubi.create.content.processing.recipe.StandardProcessingRecipe;
 import net.minecraft.world.item.crafting.RecipeInput;
 import net.minecraft.world.level.Level;
 
-public class AgeingRecipe extends StandardProcessingRecipe<RecipeInput> {
+public class BrushingRecipe extends StandardProcessingRecipe<RecipeInput> {
 
-    public AgeingRecipe(ProcessingRecipeParams params) {
-        super(ModRecipeTypes.AGEING, params);
+    public BrushingRecipe(ProcessingRecipeParams params) {
+        super(ModRecipeTypes.BRUSHING, params);
     }
 
     @Override

@@ -1,8 +1,6 @@
 {
   "replace": false,
   "values": [
-    "createsimplearcheology:bulk_ageing_catalyst",
     "createsimplearcheology:bulk_brushing_catalyst"
   ]
 }
- 

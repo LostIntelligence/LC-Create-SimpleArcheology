@@ -4,6 +4,8 @@ import java.util.function.Supplier;
 
 import org.slf4j.Logger;
 
+import com.lost.simplearcheology.condition.ConfigValueCondition;
+import com.lost.simplearcheology.recipe.ModRecipeTypes;
 import com.mojang.logging.LogUtils;
 import com.simibubi.create.api.registry.CreateBuiltInRegistries;
 import com.simibubi.create.foundation.data.CreateRegistrate;
@@ -83,6 +85,7 @@ public class CreateSimpleArcheology {
     // pass them in automatically.
     public CreateSimpleArcheology(IEventBus modEventBus, ModContainer modContainer) {
         ModRecipeTypes.register(modEventBus);
+                ConfigValueCondition.register(modEventBus);
 
         modEventBus.addListener(ModFanTypes::register);
 
@@ -118,5 +121,11 @@ public class CreateSimpleArcheology {
             ResourceLocation.fromNamespaceAndPath(
                     MODID,
                     "fan_processing_catalysts/ageing"));
+
+                    public static final TagKey<Block> FAN_PROCESSING_CATALYSTS_BRUSHING = TagKey.create(
+            Registries.BLOCK,
+            ResourceLocation.fromNamespaceAndPath(
+                    MODID,
+                    "fan_processing_catalysts/brushing"));
 
 }
