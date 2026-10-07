@@ -1,25 +1,26 @@
+# Create: Simple Archeology
 
-Installation information
-=======
+Create: Simple Archeology adds bulk fan processing for ageing materials and brushing suspicious blocks.
 
-This template repository can be directly cloned to get you started with a new
-mod. Simply create a new repository cloned from this one, by following the
-instructions provided by [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+## Requirements
 
-Once you have your clone, simply open the repository in the IDE of your choice. The usual recommendation for an IDE is either IntelliJ IDEA or Eclipse.
+- Minecraft 1.21.1
+- NeoForge 21.1.256 or newer in the 21.1 line
+- Create 6.0.9 for Minecraft 1.21.1
+- JEI is Supported.
 
-If at any point you are missing libraries in your IDE, or you've run into problems you can
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
+## Using the Catalysts
 
-Mapping Names:
-============
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/NeoForged/NeoForm/blob/main/Mojang.md
+Craft a **Bulk Ageing Catalyst** or **Bulk Brushing Catalyst**, then place the matching block in the Encased Fan's processing airflow. The catalyst selects which recipe type the fan performs. The Brushing Catalyst can face toward you when placed.
 
-Additional Resources: 
-==========
-Community Documentation: https://docs.neoforged.net/  
-NeoForged Discord: https://discord.neoforged.net/
+## Recipes
+
+| Processing | Input | Output | Config option |
+| --- | --- | --- | --- |
+| Ageing | Any item in `#minecraft:meat` | Rotten Flesh | `allowAgeingMeat` |
+| Ageing | Sand | Suspicious Sand | `allowAgeingSand` |
+| Ageing | Gravel | Suspicious Gravel | `allowAgeingGravel` |
+| Brushing | Suspicious Sand | One weighted loot result | Always enabled |
+| Brushing | Suspicious Gravel | One weighted loot result | Always enabled |
+
+Each suspicious block produces exactly one item when brushed. Its loot pool combines three source loot distributions, giving each source table one third of the total weight. Duplicate items are combined into a single result entry. The sand pool has 22 possible results; the gravel pool has 48.
