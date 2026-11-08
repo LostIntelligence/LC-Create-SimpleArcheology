@@ -19,16 +19,32 @@ public class Config {
                         .define("allowAgeingSand", true);
 
         public static final ModConfigSpec.BooleanValue ALLOW_AGEING_GRAVEL = BUILDER
-                        .comment("Whether to allow ageing Meat into Suspicious Gravel.")
+                        .comment("Whether to allow ageing Gravel into Suspicious Gravel.")
                         .define("allowAgeingGravel", true);
+
+        public static final ModConfigSpec.BooleanValue ALLOW_AGEING_COPPER = BUILDER
+                        .comment("Whether to allow ageing Copper into Exposed Copper.")
+                        .define("allowAgeingCopper", true);
+
+        public static final ModConfigSpec.BooleanValue ALLOW_AGEING_EXPOSED_COPPER = BUILDER
+                        .comment("Whether to allow ageing Exposed Copper into Weathered Copper.")
+                        .define("allowAgeingExposedCopper", true);
+
+        public static final ModConfigSpec.BooleanValue ALLOW_AGEING_WEATHERED_COPPER = BUILDER
+                        .comment("Whether to allow ageing Weathered Copper into Oxidised Copper.")
+                        .define("allowAgeingWeatheredCopper", true);
 
         public static final ModConfigSpec.BooleanValue LOG_ALL = BUILDER
                         .comment("Allows Logging (may cause a lot of log spam)")
                         .define("logAll", false);
 
-        private static final Map<String, ModConfigSpec.BooleanValue> RECIPE_TOGGLES = Map.of(
-                        "allowAgeingMeat", ALLOW_AGEING_MEAT, "allowAgeingSand", ALLOW_AGEING_SAND, "allowAgeingGravel",
-                        ALLOW_AGEING_GRAVEL);
+        private static final Map<String, ModConfigSpec.BooleanValue> RECIPE_TOGGLES = Map.ofEntries(
+                        Map.entry("allowAgeingMeat", ALLOW_AGEING_MEAT),
+                        Map.entry("allowAgeingSand", ALLOW_AGEING_SAND),
+                        Map.entry("allowAgeingGravel", ALLOW_AGEING_GRAVEL),
+                        Map.entry("allowAgeingCopper", ALLOW_AGEING_COPPER),
+                        Map.entry("allowAgeingExposedCopper", ALLOW_AGEING_EXPOSED_COPPER),
+                        Map.entry("allowAgeingWeatheredCopper", ALLOW_AGEING_WEATHERED_COPPER));
         static final ModConfigSpec SPEC = BUILDER.build();
 
         public static boolean isRecipeEnabled(String configKey) {

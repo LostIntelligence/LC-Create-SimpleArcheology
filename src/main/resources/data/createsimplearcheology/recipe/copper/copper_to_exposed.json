@@ -1,0 +1,20 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "createsimplearcheology:config_value",
+      "value": "allowAgeingCopper"
+    }
+  ],
+  "type": "createsimplearcheology:ageing",
+  "ingredients": [
+    {
+      "item": "minecraft:copper_block"
+    }
+  ],
+  "results": [
+    {
+      "id": "minecraft:exposed_copper",
+      "amount": 1
+    }
+  ]
+}
